@@ -1,0 +1,7 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@700&display=swap');
+
+h1 {
+  font-family: 'Clash Display', sans-serif;
+  font-size: clamp(1rem, 1vw, 5rem);
+  font-weight: 700;
+}
