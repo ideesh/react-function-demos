@@ -22,7 +22,7 @@ function App() {
       {/* onClick calls Clickchange, which updates state via setName */}
       {/* Updating state automatically re-renders the component with the new value */}
       <button type="button" onClick={Clickchange}>
-        change Name
+        submit
       </button>
     </>
   );
