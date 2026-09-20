@@ -9,6 +9,8 @@ function App() {
   // State to store the value entered in the Age input field
   const [age, setage] = useState("")
 
+  const [submitted, setSubmitted] = useState(null)
+
   // Updates 'names' state whenever the user types in the Name input
   function handlename(e) {
     setnames(e.target.value)
@@ -26,7 +28,9 @@ function App() {
     e.preventDefault();
 
     // Logs the current Name and Age values to the browser console
-    console.log(names, age)
+    console.log(names, age);
+    setSubmitted({ name: names, age: age })
+
   }
 
   return (
@@ -46,6 +50,18 @@ function App() {
         <button type='submit'>GO</button>
 
       </form>
+      {submitted && (
+        <div className="result-card">
+          <div className="field">
+            <span className="label">Name</span>
+            <span className="value">{submitted.name}</span>
+          </div>
+          <div className="field">
+            <span className="label">Age</span>
+            <span className="value">{submitted.age}</span>
+          </div>
+        </div>
+      )}
     </>
   )
 }
