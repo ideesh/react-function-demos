@@ -4,11 +4,12 @@
 import Home from "./Home"
 import About from "./About"
 import Contact from "./Contact"
+import Errors from "./Error"
 
 // BrowserRouter (renamed to Router) enables routing using the browser URL
 // Routes holds all the route definitions and shows only the one that matches the URL
 // Route defines a single path and the component to show for it
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route,} from 'react-router-dom'
 
 // App is the root component of the application
 function App() {
@@ -18,6 +19,7 @@ function App() {
 
       {/* Routes looks at the current URL and renders only the first matching Route */}
       <Routes>
+      
 
         {/* URL "/" (home page) shows the Home component */}
         <Route path='/' element={<Home />} />
@@ -30,9 +32,12 @@ function App() {
 
         {/* "*" matches any URL not listed above, so unknown pages show a 404 message
             instead of a blank screen. Keep this as the last route. */}
-        <Route path="*" element={<h1>404 - Page is Not Found </h1>} />
+        <Route path="*" element={<Errors />} />
+
+      
 
       </Routes>
+  
     </Router>
   )
 }
